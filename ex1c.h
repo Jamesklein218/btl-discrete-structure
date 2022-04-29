@@ -3,12 +3,15 @@
 
 #include "helper.h"
 
-double calculate(string input)
+double calculate(string input, bool isPostfix)
 {
     if (input.size() >= 1)
     {
-        if (!isOperator(input[0]))
+        cout << input << endl;
+        if (isPostfix)
+        {
             input = postfixToPrefix(input);
+        }
 
         string tmp;
         stringstream stream(input);

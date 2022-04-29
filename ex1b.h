@@ -44,7 +44,9 @@ string infixToPostfix(string input)
 			}
 			else
 			{
-				if (i - 1 >= 0 && !isdigit(input[i - 1]))
+				if ((i - 1 > 0 && !isdigit(input[i - 1]) &&
+					 input[i - 1] != ')' && input[i - 1] != ' ') ||
+					i - 1 == 0)
 				{
 					if (input[i] == '+')
 						continue;
