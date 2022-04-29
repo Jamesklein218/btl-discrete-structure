@@ -1,30 +1,7 @@
-#ifndef CALCULATE
-#define CALCULATE
+#ifndef calculate_h
+#define calculate_h
 
-#include "ex1a.h"
-
-double calExpression(double x, char op, double y)
-{
-    switch (op)
-    {
-    case '+':
-        return x + y;
-    case '-':
-        return x - y;
-    case '*':
-        return x * y;
-    case '/':
-        if (y == 0)
-            throw "Divided-by-0 error";
-        return x / y;
-    case '^':
-        if (x == 0 && y == 0)
-            throw "undefined";
-        return pow(x, y);
-    }
-
-    throw "Syntax error";
-}
+#include "helper.h"
 
 double calculate(string input)
 {

@@ -1,9 +1,9 @@
-#ifndef INFIXTOPREFIX
-#define INFIXTOPREFIX
+#ifndef infixtoprefix_h
+#define infixtoprefix_h
 
 #include "ex1b.h"
+#include "helper.h"
 
-// Helper functions
 string postfixToPrefix(string postFix)
 {
 	stringstream pStream(postFix);
@@ -41,11 +41,6 @@ string postfixToPrefix(string postFix)
 	{
 		tmp += pStack.top();
 		pStack.pop();
-	}
-
-	while (tmp[tmp.size() - 1] == ' ')
-	{
-		tmp.pop_back();
 	}
 
 	return tmp;
