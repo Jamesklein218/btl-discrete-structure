@@ -70,6 +70,7 @@ void checkSyntaxError(string input)
     bool spacing = 0;
     bool invalidChar = 0;
     bool isNum = 0, isSpaced = 0, isDotted = 0;
+
     for (int i = 0; i < input.size() && !invalidChar; ++i)
     {
         // Check spacing and floating point
@@ -100,7 +101,8 @@ void checkSyntaxError(string input)
         {
             if (parenthesis.empty())
                 invalidChar = 1;
-            parenthesis.pop();
+            else
+                parenthesis.pop();
         }
         // Check valid digit
         else if (!isdigit(input[i]) && !isOperator(input[i]) && input[i] != ' ' && input[i] != '.')
@@ -108,6 +110,7 @@ void checkSyntaxError(string input)
             invalidChar = 1;
             break;
         }
+        cout << input[i] << endl;
     }
 
     if (!parenthesis.empty() || invalidChar)

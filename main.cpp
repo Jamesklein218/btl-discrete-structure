@@ -11,9 +11,10 @@ int main()
         string x;
         cout << ">> ";
         getline(cin, x);
-        cout << endl;
         if (x == "q" || x == "quit" || x == "exit")
             break;
+
+        clock_t start = clock();
 
         try
         {
@@ -21,8 +22,8 @@ int main()
             string ex1a = infixToPrefix(x);
             double ex1c1 = calculate(ex1a, 0);
             double ex1c2 = calculate(ex1b, 1);
-            cout << "Infix to POSTFIX: " << '"' << ex1b << '"' << endl;
-            cout << "Infix to PREFIX:  " << '"' << ex1a << '"' << endl;
+            cout << "Infix to POSTFIX: " << ex1b << endl;
+            cout << "Infix to PREFIX:  " << ex1a << endl;
             cout << "Calculating postfix: " << ex1c2 << endl;
             cout << "Calculating prefix: " << ex1c1 << endl;
         }
@@ -30,7 +31,11 @@ int main()
         {
             cout << "Error: " << msg << endl;
         }
-        cout << endl;
+
+        clock_t end = clock();
+
+        cout << endl
+             << "Execute in " << (float)((end - start) * 1000.0 / 1000000.0) << " ms.\n\n";
     }
     return 0;
 }

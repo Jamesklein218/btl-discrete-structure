@@ -7,7 +7,6 @@ double calculate(string input, bool isPostfix)
 {
     if (input.size() >= 1)
     {
-        cout << input << endl;
         if (isPostfix)
         {
             input = postfixToPrefix(input);
