@@ -110,7 +110,6 @@ void checkSyntaxError(string input)
             invalidChar = 1;
             break;
         }
-        cout << input[i] << endl;
     }
 
     if (!parenthesis.empty() || invalidChar)
